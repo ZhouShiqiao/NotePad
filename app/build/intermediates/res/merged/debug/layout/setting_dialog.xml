@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/setting_mode"
+        android:drawableTop="@drawable/moon"
+        android:text="@string/setting_evening"
+        android:background="@null"
+        android:layout_weight="1"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/setting_lock"
+        android:drawableTop="@drawable/lock"
+        android:text="@string/setting_lock"
+        android:background="@null"
+        android:layout_weight="1"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/setting_color"
+        android:drawableTop="@drawable/clothes"
+        android:text="@string/setting_color"
+        android:background="@null"
+        android:layout_weight="1"/>
+</LinearLayout>
+</RelativeLayout>

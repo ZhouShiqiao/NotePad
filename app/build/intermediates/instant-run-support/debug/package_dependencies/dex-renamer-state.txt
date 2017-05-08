@@ -1,0 +1,25 @@
+#Sun May 07 15:12:30 CST 2017
+renamed.7=classes4.dex
+renamed.6=classes7.dex
+renamed.5=classes2.dex
+renamed.4=classes3.dex
+renamed.3=classes6.dex
+renamed.2=classes8.dex
+renamed.1=classes5.dex
+renamed.0=classes.dex
+base.7=D\:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_b19c311fea688454f523b38574a6646a7b90d9f8
+base.6=D\:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\internal_impl-23.4.0_26e5bdf5cf7b76edf3c5adeb73b8db08c89e1d50
+base.5=D\:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_5e5c3ed0f17c2262150350372b8f4432a1664d92
+base.4=D\:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_90bcebccea67dfbfcb2536239b44ae7a769944ec
+base.3=D\:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\constraint-layout-solver-1.0.0-alpha7_8a595267d3fc27fb57f99b81bc2fae2567520180
+base.2=D\:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-annotations-23.4.0_6c2a284fdd61d0d8ac24aa3991d9cfbc35ef85c7
+base.1=D\:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_e54be1c79f9453fa7745019b5438dde511042475
+base.0=D\:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_423ec91c7cba62149b6468e5a750f77a4175356d
+file.7=D\:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_b19c311fea688454f523b38574a6646a7b90d9f8\\classes.dex
+file.6=D\:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\internal_impl-23.4.0_26e5bdf5cf7b76edf3c5adeb73b8db08c89e1d50\\classes.dex
+file.5=D\:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_5e5c3ed0f17c2262150350372b8f4432a1664d92\\classes.dex
+file.4=D\:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_90bcebccea67dfbfcb2536239b44ae7a769944ec\\classes.dex
+file.3=D\:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\constraint-layout-solver-1.0.0-alpha7_8a595267d3fc27fb57f99b81bc2fae2567520180\\classes.dex
+file.2=D\:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-annotations-23.4.0_6c2a284fdd61d0d8ac24aa3991d9cfbc35ef85c7\\classes.dex
+file.1=D\:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_e54be1c79f9453fa7745019b5438dde511042475\\classes.dex
+file.0=D\:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_423ec91c7cba62149b6468e5a750f77a4175356d\\classes.dex
