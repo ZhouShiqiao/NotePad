@@ -6,19 +6,19 @@
     density="560dpi"
     format="10"
     plugin-version="2.3.1"
-    timestamp="1494559912715"
+    timestamp="1494562333068"
     token="-6286205234297022842"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="311" />
+        duration="174" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="44" />
+        duration="31" />
     <task
         name="verifier"
         duration="5" />
@@ -73,7 +73,7 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1494559844808"
+        timestamp="1494561928823"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="D:\Android\workspace\NotePad\app\build\outputs\apk\app-debug.apk"
@@ -81,7 +81,7 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1494559912715"
+        timestamp="1494562333068"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="D:\Android\workspace\NotePad\app\build\intermediates\split-apk\debug\slices\slice_5.apk"

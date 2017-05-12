@@ -272,9 +272,9 @@ public class NoteEditor extends Activity implements View.OnClickListener {
         mCursor.moveToFirst();
         locked = mCursor.getInt(mCursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_LOCK));
         if (locked == 1) {
-            viewed = 0;
-        } else {
             viewed = 1;
+        } else {
+            viewed = 0;
         }
     }
 
@@ -309,9 +309,7 @@ public class NoteEditor extends Activity implements View.OnClickListener {
             case R.id.edit_clock:
                 break;
             case R.id.edit_lock:
-                int colLockIndex = mCursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_LOCK);
-                int flag = mCursor.getInt(colLockIndex);
-                if(flag==0) {
+                if(locked==0) {
                     locked=1;
                     Toast.makeText(this,"note lock",Toast.LENGTH_SHORT).show();
                     lock.setText("unlock");
