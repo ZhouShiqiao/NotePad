@@ -40,12 +40,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\16b8c4b3b19c99deb46707dbc815b3246d788f65\\output\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
     },
     {
-        "merged": "D:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\delete.png",
-        "source": "D:\\Android\\workspace\\NotePad\\app\\src\\main\\res\\drawable\\delete.png"
-    },
-    {
         "merged": "D:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\16b8c4b3b19c99deb46707dbc815b3246d788f65\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "D:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\delete.png",
+        "source": "D:\\Android\\workspace\\NotePad\\app\\src\\main\\res\\drawable\\delete.png"
     },
     {
         "merged": "D:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\app_notes.png",
@@ -56,12 +56,12 @@
         "source": "D:\\Android\\workspace\\NotePad\\app\\src\\main\\res\\drawable\\ic_menu_edit.png"
     },
     {
-        "merged": "D:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\search_light.png",
-        "source": "D:\\Android\\workspace\\NotePad\\app\\src\\main\\res\\drawable\\search_light.png"
-    },
-    {
         "merged": "D:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\sun.png",
         "source": "D:\\Android\\workspace\\NotePad\\app\\src\\main\\res\\drawable\\sun.png"
+    },
+    {
+        "merged": "D:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\search_light.png",
+        "source": "D:\\Android\\workspace\\NotePad\\app\\src\\main\\res\\drawable\\search_light.png"
     },
     {
         "merged": "D:\\Android\\workspace\\NotePad\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_revert.png",

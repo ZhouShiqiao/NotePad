@@ -176,10 +176,9 @@ public class NotesList extends Activity implements AdapterView.OnItemClickListen
                 dataColumns,
                 viewIDs
         );*/
-       adapter=new MyAdapter(this,list);
+       adapter=new MyAdapter(this,this.list);
         // Sets the ListView's adapter to be the cursor adapter that was just created.
         listview.setAdapter(adapter);
-        System.out.println("size:"+list.size()+"lock:"+list.get(0).getLock());
     }
 
     protected void onResume() {
@@ -763,7 +762,6 @@ private void dialog3(){
                 }
             })
             .show();
-
 }
     private void dialog4(){
         AlertDialog.Builder builder=new AlertDialog.Builder(this);  //先得到构造器

@@ -32,6 +32,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -91,6 +92,7 @@ public class NoteEditor extends Activity implements View.OnClickListener {
     private String mOriginalContent;
 
     private int locked;
+    private int viewed;
 
     private RelativeLayout layout;
 
@@ -267,6 +269,13 @@ public class NoteEditor extends Activity implements View.OnClickListener {
         if (savedInstanceState != null) {
             mOriginalContent = savedInstanceState.getString(ORIGINAL_CONTENT);
         }
+        mCursor.moveToFirst();
+        locked = mCursor.getInt(mCursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_LOCK));
+        if (locked == 1) {
+            viewed = 0;
+        } else {
+            viewed = 1;
+        }
     }
 
     /**
@@ -414,6 +423,13 @@ public class NoteEditor extends Activity implements View.OnClickListener {
         } else {
             setTitle(getText(R.string.error_title));
             mText.setText(getText(R.string.error_message));
+        }
+        if(viewed==1){
+         layout.setVisibility(View.INVISIBLE);
+            showdialog();
+        }
+        else{
+            layout.setVisibility(View.VISIBLE);
         }
     }
 
@@ -756,5 +772,38 @@ public class NoteEditor extends Activity implements View.OnClickListener {
         dialogView.findViewById(R.id.cyan).setOnClickListener(this);
         dialogView.findViewById(R.id.purple).setOnClickListener(this);
         customizeDialog.show();
+    }
+    private void showdialog(){
+        final EditText et = new EditText(this);
+        et.setHint("please enter a password");
+        et.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        new AlertDialog.Builder(this).setTitle("Lock")
+                .setIcon(R.drawable.app_notes)
+                .setView(et)
+                .setPositiveButton("confirm", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        String input = et.getText().toString();
+                        if (input.equals("")) {
+                            Toast.makeText(getApplicationContext(), "the password cannot be empty", Toast.LENGTH_LONG).show();
+                            return;
+                        }
+                        if(!new Preferences(getApplicationContext(),"note").getString("lock").equals(input)) {
+                            Toast.makeText(getApplicationContext(), "the password is error", Toast.LENGTH_LONG).show();
+                        }
+                        else{
+                            viewed=1;
+                            layout.setVisibility(View.VISIBLE);
+                            dialog.dismiss();
+                        }
+                    }
+                })
+                .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        NoteEditor.this.finish();
+                    }
+                })
+                .show();
     }
 }

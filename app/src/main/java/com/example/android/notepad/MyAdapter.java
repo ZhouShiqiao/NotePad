@@ -36,8 +36,6 @@ public class MyAdapter extends BaseAdapter {
     public MyAdapter(Context context, List<Note> list) {
         this.list = list;
         this.context = context;
-        System.out.println("size:"+list.size());
-        System.out.println(list.get(0).getLock());
     }
 
     @Override
