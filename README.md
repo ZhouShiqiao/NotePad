@@ -1,17 +1,14 @@
 # NotePad
  使用说明请跳转至 http://blog.csdn.net/dusk_angel/article/details/71759742
  
- 新增功能：
+## 新增功能：
  
- 显示笔记更新时间
+- 显示笔记更新时间
+- 笔记搜索 
+- 修改应用的背景颜色
+- 笔记加锁
  
- 笔记搜索框
- 
- 修改应用的背景颜色
- 
- 笔记加锁
- 
- # 显示笔记更新时间
+### 显示笔记更新时间
  
  - 自定义ListView的item布局
  
@@ -295,3 +292,8 @@ public class MyAdapter extends BaseAdapter {
     }
 }
 ```
+### 笔记搜索
+
+- 修改notelist的menu布局，添加搜索框控件
+
+
