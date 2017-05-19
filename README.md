@@ -15,8 +15,8 @@
  
  - 自定义ListView的item布局
  
-  修改布局文件notelist_item.xml,文件内容如下
-
+  修改布局文件notelist_item.xml,文件内容如下
+```xml
  <?xml version="1.0" encoding="utf-8"?>
    <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -88,4 +88,4 @@
         android:textColor="@color/black"
         android:gravity="right"/>
     </RelativeLayout>
- 
+ ```
