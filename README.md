@@ -13,25 +13,23 @@
  
  # 显示笔记更新时间
  
- ## 自定义ListView的item布局
+ - 自定义ListView的item布局
  
- 修改布局文件notelist_item.xml,文件内容如下
- 
- <xml>
-  <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+  修改布局文件notelist_item.xml,文件内容如下
+
+ <?xml version="1.0" encoding="utf-8"?>
+   <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="5dp"
-    android:descendantFocusability="blocksDescendants"
-    >
-    <ImageView
+    android:descendantFocusability="blocksDescendants">
+     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/app_notes"
         android:id="@+id/type_image"/>
-    <TextView
+     <TextView
         android:id="@+id/title_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,7 +40,7 @@
         android:layout_toLeftOf="@+id/note_edit"
         android:layout_margin="5dp"
         />
-    <ImageButton
+     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -52,7 +50,7 @@
         android:layout_margin="5dp"
         android:clickable="true"
         android:focusable="false" />
-    <ImageButton
+     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@+id/note_delete"
@@ -62,27 +60,27 @@
         android:id="@+id/note_edit"
         android:clickable="true"
         android:focusable="false" />
-    <LinearLayout
+     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/title_text"
         android:orientation="horizontal"
         android:layout_toRightOf="@+id/type_image">
-        <ImageView
+         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/time_icon"
             android:src="@drawable/time"
             android:layout_margin="5dp"
             />
-        <ImageView
+         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/lock_icon"
             android:src="@drawable/lock_"
             android:layout_margin="5dp"/>
     </LinearLayout>
-    <TextView
+     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/date_text"
@@ -90,5 +88,4 @@
         android:textColor="@color/black"
         android:gravity="right"/>
     </RelativeLayout>
- </xml>
  
