@@ -7,6 +7,7 @@
 - 笔记搜索 
 - 修改应用的背景颜色
 - 笔记加锁
+- 对UI进行了美化
  
 ### 显示笔记更新时间
  
@@ -296,4 +297,108 @@ public class MyAdapter extends BaseAdapter {
 
 - 修改notelist的menu布局，添加搜索框控件
 
+修改list_options_menu.xml文件
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_add"
+        android:icon="@drawable/add"
+        android:title="@string/menu_add"
+        android:alphabeticShortcut='a'
+        android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_search"
+        android:title="Search"
+        android:icon="@drawable/search_light"
+        android:showAsAction="collapseActionView|always"
+        android:actionViewClass="android.widget.SearchView"
+        />
+    <item android:id="@+id/menu_paste"
+          android:title="@string/menu_paste"
+          android:alphabeticShortcut='p'
+        android:showAsAction="never"
+        android:visible="false"
+        />
+    <item android:id="@+id/menu_setting"
+          android:title="Setting"
+        android:icon="@drawable/settings"
+          android:alphabeticShortcut="s"
+        android:showAsAction="ifRoom"
+        />
+</menu>
+```
 
+- 在java代码中找到搜索框控件并绑定监听器
+
+绑定控件
+```java
+        SearchView search = (SearchView) menu.findItem(R.id.menu_search).getActionView();
+        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                if (newText.length() > 0) {
+                    query(newText);
+                } else {
+                    queryall();
+                }
+                return false;
+            }
+        });
+```
+绑定了OnQueryTextListener，并在onQueryTextChange()函数中设置如果有内容则调用query()否则调用queryall()
+
+query()
+```java
+private void query(String id) {
+        list.clear();
+        String where = NotePad.Notes.COLUMN_NAME_TITLE + " like \"%"+id+"%\"";
+        Cursor cursor = getContentResolver().query(
+                getIntent().getData(),            
+                PROJECTION,                       
+                where,                            
+                null,                             
+                NotePad.Notes.DEFAULT_SORT_ORDER  
+        );
+        while (cursor.moveToNext()){
+            Note note= new Note();
+            note.setId(cursor.getInt(cursor.getColumnIndex(NotePad.Notes._ID)));
+            note.setTitle(cursor.getString(cursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_TITLE)));
+            note.setModificationdate(cursor.getString(cursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE)));
+            list.add(note);
+        }
+        adapter=new MyAdapter(this,list);
+        listview.setAdapter(adapter);
+    }
+```
+
+queryall()
+```java
+ private void queryall(){
+        list.clear();
+        Cursor cursor = getContentResolver().query(
+                getIntent().getData(),            
+                PROJECTION,                       
+                null,                             
+                null,                             
+                NotePad.Notes.DEFAULT_SORT_ORDER  
+        );
+        while (cursor.moveToNext()){
+            Note note= new Note();
+            note.setId(cursor.getInt(cursor.getColumnIndex(NotePad.Notes._ID)));
+            note.setTitle(cursor.getString(cursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_TITLE)));
+            note.setModificationdate(cursor.getString(cursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE)));
+            list.add(note);
+        }
+        adapter=new MyAdapter(this,list);
+        listview.setAdapter(adapter);
+    }
+```
+
+### 修改应用背景颜色
+
+- 为应用添加设置颜色按钮
