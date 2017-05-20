@@ -402,3 +402,128 @@ queryall()
 ### 修改应用背景颜色
 
 - 为应用添加设置颜色按钮
+
+<img src="https://github.com/ZhouShiqiao/NotePad/blob/master/picture/a12.png" width="30%" alt="">
+
+自定义设置背景颜色的对话框
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageButton
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/red"
+        android:id="@+id/red"
+        android:layout_weight="1"/>
+    <ImageButton
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/orange"
+        android:id="@+id/orange"
+        android:layout_weight="1"/>
+    <ImageButton
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/yellow"
+        android:id="@+id/yellow"
+        android:layout_weight="1"/>
+    <ImageButton
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/green"
+        android:id="@+id/green"
+        android:layout_weight="1"/>
+    <ImageButton
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/blue"
+        android:id="@+id/blue"
+        android:layout_weight="1"
+        />
+    <ImageButton
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/cyan"
+        android:id="@+id/cyan"
+        android:layout_weight="1"/>
+    <ImageButton
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/purple"
+        android:id="@+id/purple"
+        android:layout_weight="1"/>
+</LinearLayout>
+```
+- 在Java代码中使用对话框，并绑定控件
+
+自定义对话框
+
+```java
+ private void showCustomizeDialog() {
+        AlertDialog.Builder customizeDialog =
+                new AlertDialog.Builder(NoteEditor.this);
+        final View dialogView = LayoutInflater.from(NoteEditor.this)
+                .inflate(R.layout.colordialog, null);
+        customizeDialog.setTitle("set backgroud color");
+        customizeDialog.setView(dialogView);
+        customizeDialog.setPositiveButton("OK",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        dialogView.findViewById(R.id.red).setOnClickListener(this);
+        dialogView.findViewById(R.id.orange).setOnClickListener(this);
+        dialogView.findViewById(R.id.yellow).setOnClickListener(this);
+        dialogView.findViewById(R.id.green).setOnClickListener(this);
+        dialogView.findViewById(R.id.blue).setOnClickListener(this);
+        dialogView.findViewById(R.id.cyan).setOnClickListener(this);
+        dialogView.findViewById(R.id.purple).setOnClickListener(this);
+        customizeDialog.show();
+    }
+```
+
+为每个控件绑定点击事件
+```java
+ public void onClick(View v){
+        switch (v.getId()){
+            case R.id.red:
+                layout.setBackgroundColor(getResources().getColor(R.color.red));
+                break;
+            case R.id.orange:
+                layout.setBackgroundColor(getResources().getColor(R.color.orange));
+                break;
+            case R.id.yellow:
+                layout.setBackgroundColor(getResources().getColor(R.color.yellow));
+                break;
+            case R.id.green:
+                layout.setBackgroundColor(getResources().getColor(R.color.green));
+                break;
+            case R.id.blue:
+                layout.setBackgroundColor(getResources().getColor(R.color.blue));
+                break;
+            case R.id.cyan:
+                layout.setBackgroundColor(getResources().getColor(R.color.cyan));
+                break;
+            case R.id.purple:
+                layout.setBackgroundColor(getResources().getColor(R.color.purple));
+                break;
+        }
+    }
+```
+
+### 笔记加密
+
+
