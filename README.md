@@ -526,4 +526,61 @@ queryall()
 
 ### 笔记加密
 
+- 创建sharepreference，并设置键值
+
+创建sharepreference-“note”，并设置键“lock”，lock为的值则为笔记的密码
+自定义Preference类对sharepreference的操作进行封装
+
+```java
+public class Preferences {
+    private Context context;
+    private SharedPreferences sp;
+
+    public Preferences(Context context, String name) {
+        this.context = context;
+        sp = context.getSharedPreferences(name, Context.MODE_PRIVATE);
+    }
+
+    public void putString(String key, String value) {
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString(key, value);
+        editor.commit();
+    }
+
+    public void putInt(String key, int value) {
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putInt(key, value);
+        editor.commit();
+    }
+
+    public String getString(String key) {
+        return sp.getString(key, null);
+    }
+
+    public int getInt(String key) {
+        return sp.getInt(key, 0);
+    }
+}
+```
+
+并在note表中增加字段lock，如果lock值为“1”则为锁定状态，为“0”则为非锁定状态
+在noteeditor中，查询笔记信息时进行判断，先判断是否开启加密功能，其次判断该条笔记是否为锁定状态
+
+```java
+mCursor.moveToFirst();
+        locked = mCursor.getInt(mCursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_LOCK));
+        if (locked == 1) {
+            viewed = 1;
+        } else {
+            viewed = 0;
+        }
+ if(viewed==1){
+         layout.setVisibility(View.INVISIBLE);
+            showdialog();
+        }
+        else{
+            layout.setVisibility(View.VISIBLE);
+        }
+```
+
 
